@@ -37,7 +37,7 @@ def allowed_file(filename):
 
 def gen_file_name(filename):
     """
-    If file was exist already, rename it and return a new name
+    If file existed already, rename it and return a new name
     """
 
     i = 1
