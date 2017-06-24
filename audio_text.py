@@ -22,35 +22,33 @@ class BingSpeechAPI:
 		self.session = requests.Session()
 
 	def authenticate(self):
-		if self.expire_time is None or monotonic() > self.expire_time:  # first credential request, or the access token from the previous one expired
-            # get an access token using OAuth
-            #credential_url = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
-            headers = {"Ocp-Apim-Subscription-Key": self.key}
+		if self.expire_time is None or monotonic() > self.expire_time: # first credential request, or the access token from the previous one expired
+			# get an access token using OAuth
+			#credential_url = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
+			headers = {"Ocp-Apim-Subscription-Key": self.key}
+        	start_time = monotonic()
+        	response = self.session.post("https://api.cognitive.microsoft.com/sts/v1.0/issueToken", headers=headers)
 
-            start_time = monotonic()
-            response = self.session.post("https://api.cognitive.microsoft.com/sts/v1.0/issueToken", headers=headers)
+		if response.status_code != 200:
+			raise RequestError("http request error with status code {}".format(response.status_code))
+			self.access_token = response.content
+			expiry_seconds = 590 # document mentions the access token is expired in 10 minutes
+			self.expire_time = start_time + expiry_seconds
 
-            if response.status_code != 200:
-                raise RequestError("http request error with status code {}".format(response.status_code))
-
-            self.access_token = response.content
-            expiry_seconds = 590 # document mentions the access token is expired in 10 minutes
-            self.expire_time = start_time + expiry_seconds
-
-	def get_audio_file:
+	def get_audio_file():
 		# use the audio file as the audio source
 		r = sr.Recognizer()
 		with sr.AudioFile(AUDIO_FILE) as source:
-    		audio = r.record(source)  # read the entire audio file
+			audio = r.record(source)  # read the entire audio file
 
-	def recognize_speech:
+	def recognize_speech():
 		# recognize speech using Microsoft Bing Voice Recognition
 		try:
-    		print("Microsoft Bing Voice Recognition thinks you said " + r.recognize_bing(audio, key=BING_KEY))
-		except sr.UnknownValueError:
-    		print("Microsoft Bing Voice Recognition could not understand audio")
+ 			print("Microsoft Bing Voice Recognition thinks you said " + r.recognize_bing(audio, key=BING_KEY))
+ 		except sr.UnknownValueError:
+ 			print("Microsoft Bing Voice Recognition could not understand audio")
 		except sr.RequestError as e:
-    		print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
+			print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
 
 # Text to Slang Transcribe
 
