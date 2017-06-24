@@ -3,6 +3,8 @@
 
 import speech_recognition as sr
 import requests
+import timeit
+import logging
 # obtain path to "english.wav" in the same folder as this script
 from os import path
 from api_keys import BING_KEY
@@ -50,6 +52,12 @@ class BingSpeechAPI:
 		except sr.RequestError as e:
 			print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
 
+def main():
+    logging.basicConfig(level=logging.DEBUG)
+    bing = BingSpeechAPI()
+
+if __name__ == '__main__':
+	main()
 # Text to Slang Transcribe
 
 
