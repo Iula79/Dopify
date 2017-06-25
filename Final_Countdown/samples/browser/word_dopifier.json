@@ -1,0 +1,62 @@
+{
+"hello":[
+    {"1":"hiya"}, 
+    {"2":"yo"},
+],
+"hi":[
+    {"1":"hiya"}, 
+    {"2":"yo"},
+],
+"hey":[
+    {"1":"hiya"}, 
+    {"2":"yo"},
+],
+"my name is":[
+    {"1":"they call me"}
+],
+"how are you":[
+    {"1":"what up dawg"},
+    {"2":"wazzup homie"}
+],
+"good":[
+	{"1":"sweet"},
+	{"2":"tight"},
+	{"3":"dope"},
+],
+"fine":[	
+	{"1":"just chillin'"},
+],
+"very":[
+	{"1":"hella"}
+],
+"really":[
+	{"1":"seriously"},
+	{"2":"literally"}
+],
+"yes":[
+	{"1":"YAS"},
+	{"2":"hell yes"}
+],
+"no":[
+	{"1":"hell no"},
+	{"2":"naww"}
+],
+"haha":[
+	{"1":"LOL"}
+],
+"hahaha": [
+	{"1":"LMAO"}
+],
+"the": [
+	{"1":"da"}
+],
+"that": [
+	{"1":"dat"},
+],
+"have": [
+	{"1":"got"},
+],
+"for": [
+	{"1":"fo"},
+]
+}
