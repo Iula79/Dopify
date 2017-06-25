@@ -1,15 +1,20 @@
-text = "This is a test script"
 
-var words = ["this", "is", "a", "test", "script"]
+var original_phase = "that is a good script"
+var phrase = original_phase.split(" ")
 
-function match(text){
-
-	for (var i=0; i<words.length; i++){
-		if (dictionary.words[i]){
-			console.log(dictionary.words[i])
+function dopify(text){
+	var new_phrase = []
+	for (var i=0; i < text.length; i++){
+		if (dictionary[text[i]]){
+			slang_results = dictionary[text[i]];
+			var slang_word = slang_results[Math.floor(Math.random()*new_phrase.length)];
+			new_phrase.push(slang_word);
+		}
+		else {
+			new_phrase.push(text[i]);
 		}
 	}
-
+	return new_phrase
 }
 
 var dictionary = {
@@ -32,5 +37,4 @@ var dictionary = {
 	"for": ["fo"]
 }
 
-
-match(words)
+dopify(words)
