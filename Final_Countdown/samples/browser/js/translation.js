@@ -38,3 +38,10 @@ var dictionary = {
 	"have": ["got"],
 	"for": ["fo"]
 }
+
+
+myRegex = new RegExp('see you later');
+sentence = "i am going to see you later";
+newString = "see YA";
+mySentence = sentence.replace( new RegExp(myRegex), newString );
+console.log(mySentence)
