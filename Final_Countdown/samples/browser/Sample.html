@@ -241,8 +241,11 @@
              phraseDiv.innerHTML = json;
              var obj = JSON.parse(json)
              var sentence = obj["DisplayText"]
-             console.log(sentence)
-             translationDiv.innerHTML = dopify(sentence).join(' ').toLowerCase();
+             console.log("This is the sentence" + sentence);
+             newHTML = dopify(sentence)
+             console.log("This is the new sentence" + newHTML);
+
+             translationDiv.innerHTML = newHTML.join(' ').toLowerCase();
         }
 
         function OnComplete() {
