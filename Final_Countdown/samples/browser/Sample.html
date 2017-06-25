@@ -242,12 +242,12 @@
 
         function UpdateRecognizedPhrase(json) {
              console.log("This is the json")
-            console.log(json)
+             console.log(json)
              phraseDiv.innerHTML = json;
              var obj = JSON.parse(json)
              var sentence = obj["DisplayText"]
              console.log(sentence)
-             translationDiv.innerHTML = dopify(sentence).join(' ')
+             translationDiv.innerHTML = dopify(sentence).join(' ').toLowerCase();
         }
 
         function OnComplete() {
