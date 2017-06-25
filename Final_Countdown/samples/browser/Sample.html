@@ -209,7 +209,7 @@
                 stopBtn.disabled = false;
             });
 
-            stopBtn.addEventListener("click", function () {
+            stopBtn.addEventListener("mouseout", function () {
                 RecognizerStop(SDK);
                 startBtn.disabled = false;
                 stopBtn.disabled = true;
@@ -247,8 +247,7 @@
              var obj = JSON.parse(json)
              var sentence = obj["DisplayText"]
              console.log(sentence)
-            
-             translationDiv.innerHTML = dopify(sentence)
+             translationDiv.innerHTML = dopify(sentence).join(' ')
         }
 
         function OnComplete() {

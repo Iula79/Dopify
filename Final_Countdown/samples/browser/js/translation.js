@@ -4,7 +4,7 @@ function dopify(text){
 	for (var i=0; i < splitText.length; i++){
 		if (dictionary[splitText[i]]){
 			slang_results = dictionary[splitText[i]];
-			var slang_word = slang_results[Math.floor(Math.random()*new_phrase.length)];
+			var slang_word = slang_results[Math.floor(Math.random()*(new_phrase.length))];
 			new_phrase.push(slang_word);
 		}
 		else {
