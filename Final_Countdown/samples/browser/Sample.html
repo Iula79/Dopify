@@ -200,7 +200,7 @@
                     previousSubscriptionKey = key.value;
                     Setup();
                 }
-
+                // console.log(hypothesisDiv.innerHTML)
                 hypothesisDiv.innerHTML = "";
                 translationDiv.innerHTML = "";
                 phraseDiv.innerHTML = "";
@@ -230,7 +230,10 @@
         }
 
         function UpdateRecognizedHypothesis(text) {
+            console.log("This is the text")
+            console.log(text)
             hypothesisDiv.innerHTML = text;
+            
         }
 
         function OnSpeechEndDetected() {
@@ -238,7 +241,14 @@
         }
 
         function UpdateRecognizedPhrase(json) {
+             console.log("This is the json")
+            console.log(json)
              phraseDiv.innerHTML = json;
+             var obj = JSON.parse(json)
+             var sentence = obj["DisplayText"]
+             console.log(sentence)
+            
+             translationDiv.innerHTML = dopify(sentence)
         }
 
         function OnComplete() {

@@ -1,17 +1,14 @@
-
-var original_phase = "that is a good script"
-var phrase = original_phase.split(" ")
-
 function dopify(text){
+	splitText = text.split(' ')
 	var new_phrase = []
-	for (var i=0; i < text.length; i++){
-		if (dictionary[text[i]]){
-			slang_results = dictionary[text[i]];
+	for (var i=0; i < splitText.length; i++){
+		if (dictionary[splitText[i]]){
+			slang_results = dictionary[splitText[i]];
 			var slang_word = slang_results[Math.floor(Math.random()*new_phrase.length)];
 			new_phrase.push(slang_word);
 		}
 		else {
-			new_phrase.push(text[i]);
+			new_phrase.push(splitText[i]);
 		}
 	}
 	return new_phrase
@@ -36,5 +33,3 @@ var dictionary = {
 	"have": ["got"],
 	"for": ["fo"]
 }
-
-dopify(words)
