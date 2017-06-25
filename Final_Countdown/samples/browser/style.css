@@ -17,6 +17,11 @@
     -o-transition: rotate(1800deg);
 }
 
+h1 {
+    font-family: 'Permanent Marker', cursive;
+
+}
+
 canvas { 
 	position:absolute;
     top:0;

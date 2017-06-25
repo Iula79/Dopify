@@ -49,25 +49,20 @@
             </td>
         </tr>
         <tr>
-            <td></td>
-            <span style="color:#FFFFFF; font-size: 30px" id="hypothesisDiv"></span>
-        </tr>
-        <tr>
-            <td></td>
-            <span style="color:#FFFFFF; font-size: 30px" id="translationDiv"></span>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
                 <textarea hidden id="phraseDiv" style="width:500px;height:200px"></textarea>
-            </td>
         </tr>
         <tr>
-            <td></td>
             <td><span hidden id="statusDiv"></span></td>
         </tr>
     </table>
 
+    <div style="width:800px; margin:0 auto;">
+         <h1 style="color:#FFFFFF; font-size: 30px"> Input:  <span style="color:#FFFFFF; font-size: 30px" id="hypothesisDiv"></span> </h1>
+        </div>
+
+    <div style="width:800px; margin:0 auto;">
+      <h1 style="color:#FFFFFF; font-size: 30px"> Output:  <span style="color:#FFFFFF; font-size: 30px" id="translationDiv"></span> </h1>
+    </div>
     <div id="viz">
         <canvas id="analyser" width="1024" height="500"></canvas>
     </div>
@@ -201,8 +196,8 @@
                     Setup();
                 }
                 // console.log(hypothesisDiv.innerHTML)
-                hypothesisDiv.innerHTML = "";
-                translationDiv.innerHTML = "";
+                hypothesisDiv.innerHTML = " ";
+                translationDiv.innerHTML = " ";
                 phraseDiv.innerHTML = "";
                 RecognizerStart(SDK, recognizer);
                 startBtn.disabled = true;
