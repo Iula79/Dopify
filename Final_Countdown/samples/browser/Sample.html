@@ -53,6 +53,10 @@
         </tr>
         <tr>
             <td></td>
+            <span style="color:#FFFFFF; font-size: 30px" id="translationDiv"></span>
+        </tr>
+        <tr>
+            <td></td>
             <td>
                 <textarea hidden id="phraseDiv" style="width:500px;height:200px"></textarea>
             </td>
@@ -176,6 +180,7 @@
             stopBtn = document.getElementById("stopBtn");
             phraseDiv = document.getElementById("phraseDiv");
             hypothesisDiv = document.getElementById("hypothesisDiv");
+            translationDiv = document.getElementById("translationDiv");
             statusDiv = document.getElementById("statusDiv");
             key = document.getElementById("key");
             languageOptions = document.getElementById("languageOptions");
@@ -196,6 +201,7 @@
                 }
 
                 hypothesisDiv.innerHTML = "";
+                translationDiv.innerHTML = "";
                 phraseDiv.innerHTML = "";
                 RecognizerStart(SDK, recognizer);
                 startBtn.disabled = true;
